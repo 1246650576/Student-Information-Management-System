@@ -14,4 +14,47 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SAccount.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SConsole.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SStudent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="STime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SMenu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SStudent.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SConsole.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SAccount.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="STime.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SMenu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
