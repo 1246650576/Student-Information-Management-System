@@ -158,7 +158,7 @@ void Manage::output(Student& student) {
 	cout << "   ------------------------------" << endl;
 	cout << "            学生学籍信息" << endl;
 	cout << "   ------------------------------" << endl << endl;
-	cout << "姓名: " << student.getName() << endl
+	cout<< "姓名: " << student.getName() << endl
 		<< "学号: " << student.getNumber() << endl
 		<< "性别: " << student.getSex() << endl
 		<< "政治面貌: " << student.getPoliticCountenance() << endl
@@ -215,30 +215,46 @@ void Manage::chart() {
 	while (n) {
 		statistic_menu();//统计菜单
 		cin >> n;
-		switch (n)
-		{
-		case 0: cout << "返回上级菜单"; break;
-		case 1: 
-			print(n - 1); break;
-		case 2:
-			print(n - 1); break;
-		case 3:
-			print(n - 1); break;
-		case 4:
-			print(n - 1); break;
-		case 5:
-			print(n - 1); break;
-		default:
-			break;
+		if (n > 5 || n < 0) {
+			cout << "输入错误" << endl;
+		}
+		else {
+			switch (n)
+			{
+			case 0: cout << "返回上级菜单";
+				//当返回上级菜单时，将(vector)data内的数据清空
+				for (int i = 0; i < 5; i++)
+					data[i].clear();
+				break;
+			case 1:
+				print(n - 1); break;
+			case 2:
+				print(n - 1); break;
+			case 3:
+				print(n - 1); break;
+			case 4:
+				print(n - 1); break;
+			case 5:
+				print(n - 1); break;
+			}
 		}
 	}
 }
 
 //函数chart的辅助函数，实现打印
 void Manage::print(int n) {
+	CleanScreen();
+	cout << endl
+		<< "-----------------------------------\n"
+		<< "              统计表\n"
+		<< "-----------------------------------\n"
+		<< setiosflags(ios_base::left) << setw(20) << information_statictis[n] << setw(6) << "人数" << setw(5) << "占比" << endl;
 	for (multimap<string, int>::iterator it = data[n].begin(); it != data[n].end(); it++)
-		cout << it->first << ":" << it->second << "人" << endl;
+		cout  << setw(20) << it->first << setw(2) << it->second << "人  "
+		<< setw(5) << (static_cast<double>(it->second) / static_cast<double>(number_student_multimap.size()))*100 << "%" <<endl;//输出所占比例
+	cout << resetiosflags(ios_base::left);//清除格式设置
 	PauseScreen();
+	cout << endl;
 }
 
 //删除学生信息

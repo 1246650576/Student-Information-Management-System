@@ -78,7 +78,8 @@ private:
 	multimap<string, Student> number_student_multimap;//定义多重映射，学号--学生信息
 	vector<multimap<string, int> > data;              //存储统计数据，类型--数量
 	const char *information[5] = { "学号","姓名","性别","出生年月","籍贯",};
-	
+	const char *information_statictis[5] = { "性别","出生年月","籍贯","班级","政治面貌" };
+
 	//函数chart的辅助函数，实现打印
 	void print(int n);
 	//统计

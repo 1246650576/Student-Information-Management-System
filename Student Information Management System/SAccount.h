@@ -32,7 +32,7 @@ public:
 	string get_id()const { return id; }
 	string get_code()const {return code[0];}
 private:
-	string id;		//ÕË»§
+	string id;		//ÕËºÅ
 	string code[2]; //ÃÜÂë
 	int flag;
 

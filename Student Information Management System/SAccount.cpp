@@ -19,7 +19,7 @@ Account::~Account() {
 void Account::CreatAccount() {
 	flag = 1;
 	cout << "欢迎进入学生信息管理系统登录界面..." << endl;
-	cout << "请先注册一个账户!" << endl;
+	cout << "请先注册一个账户!" << endl<<endl;
 	do {
 		if (!(code[0] == code[1])) {
 			//在重新读入之前清空字符串
@@ -31,7 +31,7 @@ void Account::CreatAccount() {
 		id.clear();
 		code[0].clear();
 		code[1].clear();
-		cout << endl;
+		cout << "<友情提示>1.密码只能包含数字和字母" << endl << "          2.字母区分大小写" << endl;
 		cout << "        >>账号:"; cin >> id;
 		cout << "        >>密码(6位):"; hidePassword(code[0]);
 		cout << "        >>确定密码:";  hidePassword(code[1]);
@@ -189,6 +189,6 @@ bool Account::find_filename(string filename) {
 			}
 		} while (_findnext(lf, &File) == 0);
 	}
-	_findclose(lf);//关闭由FindFirstFile函数创建的一个搜索句柄
+	_findclose(lf);//关闭由_findfirst函数创建的一个搜索句柄
 	return flag;
 }
